@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.crypto__services{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  min-height: 90vh;
+  margin-bottom: 50px;
+}
+.crypto__services-heading{
+  font-size: 3rem;
+  color: var(--green);
+  margin: 4rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+.crypto__services-box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+  gap: 2rem;
+  width: 80%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.crypto__services-box{
+  padding: 2rem;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.crypto__services-box-icon{
+  font-size: 4rem;
+  padding-bottom: 5rem;
+  color: var(--black);
+}
+.crypto__services-box h3{
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  color: var(--black);
+}
+.crypto__services-box p{
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--light-color);
+}
+.crypto__services-box::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--green);
+  box-shadow: var(--box-shadow);
+  z-index: -1;
+  clip-path: circle(9rem at 5% 0%);
+  transition: .3s linear;
+}
+.crypto__services-box:hover::before{
+  clip-path: circle(100%);
+}
+.crypto__services-box:hover > *{
+  color: #fff;
 }
