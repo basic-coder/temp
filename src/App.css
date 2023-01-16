@@ -60,3 +60,10 @@
 .crypto__services-box:hover > *{
   color: #fff;
 }
+
+@media screen and (max-width: 720px){
+  .crypto__services-box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+  }
+}
